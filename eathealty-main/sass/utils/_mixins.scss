@@ -1,0 +1,109 @@
+@mixin gradientPrimary {
+    background:linear-gradient(to right,$primary-color, darken($primary-color,3));
+}
+@mixin gradientSecondary {
+    background:linear-gradient(to right,$second-color, darken($second-color,3));
+}
+@mixin gradientWindow {
+    background:linear-gradient(to right,lighten($primary-color,20), lighten($primary-color,7));
+}
+
+@mixin gradientHeader {
+    background:linear-gradient(to right,lighten($primary-color,2), lighten($third-color,0));
+}
+
+@mixin border {
+    border: 3px solid lighten($primary-color,25);
+}
+@mixin big-border {
+    border: 20px solid lighten($primary-color,25);
+}
+@mixin gradientSponsort{
+    background: linear-gradient(to right, lighten($primary-color, 100),lighten($primary-color, 25));
+}
+@mixin title{
+    &__title{
+        display: flex;
+        align-items: center;
+        &__box{
+            margin-left: 100px;
+            width: 50px;
+            @include extra-small{
+                margin-left: 30px;
+            }
+            img{
+                width: 40px;
+                position: absolute;
+                left: 5px;
+                right: 5px;
+                bottom:5px;
+                top: 5px;
+                @include extra-small{
+                    text-align: center;
+                    left: 2px;
+                    right: 2px;
+                    bottom:2px;
+                    top: 2px;
+                
+                }
+            }
+        }
+        &__text{
+            margin-left: 20px;
+            color:$primary-color;
+           
+            h2{
+                font-weight: 700;
+                font-size: 33px;
+                @include extra-small{
+                    text-align: center;
+                    font-size: 25px;
+                }
+            }
+            
+        }
+       
+       
+    }
+    
+}
+@mixin scaleBtn {
+    transform: scale(1.2);
+    transition-delay:20ms;
+    transition-timing-function: ease-in-out;
+}
+
+
+@mixin extra-small{
+    @media only screen and (max-width:map-get($screens,extra-small) ) {
+        @content;
+    } 
+}
+
+@mixin small{
+    @media only screen and (min-width:map-get($screens, extra-small)) {
+        @content;        
+    } 
+}
+
+
+@mixin medium{
+    @media only screen and (min-width:map-get($screens, small)) {
+        @content;        
+    } 
+
+}
+
+@mixin large{
+    @media only screen and (min-width:map-get($screens, medium)) {
+        @content;        
+    } 
+
+}
+
+@mixin extra-large{
+    @media only screen and (min-width:map-get($screens, large)) {
+        @content;        
+    } 
+
+}

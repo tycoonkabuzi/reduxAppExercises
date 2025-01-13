@@ -1,0 +1,214 @@
+.value{
+    background-color:rgb(243, 241, 241);
+    padding-top: 200px;
+    padding-bottom: 150px;
+    @include font;
+    display: grid;
+
+    @include extra-small{
+        grid-template-columns:auto;
+    }
+    @include small{
+        grid-template-columns:auto auto;
+    }
+    @include extra-large{
+        grid-template-columns: auto auto;
+    }
+    &__second{
+        display: grid;
+        
+        @include extra-small{
+            grid-template-columns: auto;
+            margin-left: 0;
+        }
+        @include small{
+            grid-template-columns: auto;
+            
+        }
+        @include extra-large{
+            grid-template-columns: auto auto ;
+        }
+        &__title {
+            display:grid;
+            grid-template-columns: auto auto;
+            align-items: center;
+            margin-top: -200px;
+            margin-bottom: 290px;
+            margin-left: -250px;
+            @include extra-small{
+                margin-top: 20%;
+            }
+            @include small{
+                margin-bottom: 360px;
+            }
+            &__box{
+                margin-left: 100px;
+                width: 50px;
+                text-align: left;
+                @include extra-small{
+                    margin-left: 300px;
+                    margin-top: -100px;
+                    
+                }
+                img{
+                    width: 40px;
+                    position: absolute;
+                    left: 5px;
+                    right: 5px;
+                    bottom:5px;
+                    top: 5px;
+                }
+            }
+            &__text{
+                margin-top: 70px;
+                margin-left: 20px;
+                color:$primary-color;
+                @include extra-small{
+                    margin-left: 20px;
+                    width: 100%;
+                }
+                
+                h2{
+                    font-weight: 700;
+                    font-size: 33px;
+                    @include extra-small{
+                        width: 70%;
+                        font-size: 25px;
+                    }
+                }
+                p{
+                    color:$color-content;
+                    font-size: 22px;
+                    width: 500px;
+                    margin-left: -70px;
+                    @include extra-small{
+                       width: 90%;
+                       font-size: 17px;
+                       margin-top: 100px;
+                    }
+                }
+            }
+        }
+        &__element{
+            margin-top: -300px;
+            margin-left: -700px;
+            display: grid;
+            grid-area: right;
+            @include extra-small{
+                margin-top: -200px;
+                margin-left: -340px;
+                grid-template-columns: auto;
+                row-gap: 50px;
+            }
+            @include small{
+                grid-template-columns: auto;
+                row-gap: 50px;
+                margin-left: -300px;
+
+                
+            }
+            @include medium{
+                margin-left: -330px;
+            }
+            @include large{
+                margin-left:-400px;
+            }
+           
+            @include extra-large{
+                grid-template-columns: auto auto;
+                margin-left: -700px;
+            }
+            &__part{
+                background-color:$color-element1;
+                width: 300px;
+                height: 240px;
+                border-color: $color-link;
+                border-radius: 40px ;
+                position: relative;
+            
+                &__box{
+                    position: relative;
+                    top: -20px;
+                    left: 20px;
+                   
+                    img{
+                        position: absolute;
+                        width: 35px;
+                        left: 7px;
+                        top: 5px;
+                        right:5px;
+    
+                    }
+                }
+               
+               &__content{
+                margin-top: 20px;
+                margin-left: 20px;
+                h1{
+                   
+                    color: $primary-color;
+                }
+                p{
+                    color: darken($color-text, 10);
+                }
+                }
+                &--change{
+                    background-color:$color-element2;
+                }
+            }
+            
+        }
+        
+    }
+    
+    .window{
+        margin-left: 100px;
+        position: relative;
+        z-index: 2;
+        @include extra-small{
+            margin-left: 3%;
+            width: 85%;
+        }
+        @include small{
+            margin-left: 20%;
+            width: 120%;
+            margin-top: 100px;  
+        }
+       
+        @include medium{
+            width: 270px;
+            margin-left: 20%;
+           
+        }
+        @include large{
+            width:350px;
+            margin-left: 20%;
+           
+        }
+        img{
+            width: 500px;
+            position: absolute;
+            bottom:0px;
+            z-index: 1;
+            @include extra-small{
+                width: 150%;
+            }
+            @include small{
+                width: 190%;
+                left:-70px;
+            }
+            @include medium{
+                width: 450px;
+                left:-60px;
+            }
+            @include large{
+                width:500px;
+                margin-left: 20px;
+               
+            }
+            
+        }
+    }
+  
+    
+}

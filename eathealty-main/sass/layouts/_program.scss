@@ -1,0 +1,77 @@
+.program{
+    @include font;
+    padding-top: 100px;
+    @include title;
+    &__title{
+        @include medium{
+            justify-content: center;
+        }
+        @include extra-large{
+            justify-content: left;
+        }
+    }
+    &__list{
+       
+        height: 300px;
+        @include big-border;
+        border-radius: 90px;
+        margin: auto;
+        margin-top:50px;
+        color: $color-link;
+        display: grid;
+        
+        @include extra-small{
+            margin-top: 100px;
+            width: auto;
+            height: auto;
+            display: grid;
+            grid-template-columns: auto;
+        }
+        @include small{
+            grid-template-columns: auto auto;
+            width: auto;
+            height: auto;
+            padding-bottom: 40px;
+
+         }
+         @include extra-large{
+            grid-template-columns: auto auto auto auto;
+            width: 90%; ;
+         }
+        
+        &__element{
+            margin-left: 30px;
+            padding-left: 30px;
+            padding-right: 30px;
+            padding-top: 60px;
+            width: 70%;
+            text-align: center;
+            &:hover{
+                @include gradientSecondary;
+                padding-top: 50px;
+                margin-top: -100px;
+                border-top-left-radius: 40px;
+                border-top-right-radius: 40px;
+                color:$text-bouton;
+                
+            }
+            &__image{
+                margin: auto;
+                
+                
+                img{
+                    position: absolute;
+                    left: 0;
+                    width: 50px;
+                }
+                
+            }
+            &__content{
+                h4{
+                    font-weight: 700;
+                }
+            }
+        }
+       
+    }
+}

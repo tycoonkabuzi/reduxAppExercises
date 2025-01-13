@@ -1,0 +1,11 @@
+.window{
+    @include gradientWindow;
+    @include big-border;
+    width: 400px;
+    height: 500px;
+    border-top-left-radius:250px;
+    border-top-right-radius:250px;
+    border-bottom-left-radius:40px;
+    border-bottom-right-radius:40px;
+    box-shadow: -32px 43px 49px lighten($primary-color, 10px);
+}

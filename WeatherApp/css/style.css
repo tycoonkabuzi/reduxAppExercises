@@ -1,0 +1,105 @@
+html,body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat Alternates', sans-serif;
+
+}
+.main{
+    background-color: rgb(204, 204, 204);
+    overflow: auto;
+    height: auto;
+   
+}
+.main__container h1{
+    font-weight: 400;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    color: rgb(83, 83, 83);;
+}
+.main__container{
+    background-color: rgb(243, 243, 243);
+    width: 700px;
+    height: auto;
+    margin: auto;
+    margin-bottom: 20px;
+    box-shadow: 1px 5px 10px rgb(193, 193, 193);
+    padding-bottom: 20px;
+}
+form{
+    width: 500px;
+    margin: auto;
+}
+#icon{
+   width: 60px;
+   margin:auto;
+   margin-top: 50px;
+}
+.description{
+    width:70px;
+    margin:auto;
+    margin-top: 10px;
+    font-size: 20px;
+}
+.details{
+   
+    padding-top:50px;
+    padding-left: 10px;
+    width: 600px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+.details div{
+    background-color: rgb(228, 228, 228);
+    width: 150px;
+    padding: 20px;
+}
+.weather-data{
+    color:rgb(48, 48, 48);
+}
+.temperature{
+    font-size: 40px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.main__container:hover{
+    box-shadow: 1px 5px 10px rgb(235, 235, 235);
+}
+.main__container input{
+    border: none;
+    border-width: 1px;
+    
+    background-color: rgb(243, 243, 243);
+}
+.main__container input::placeholder{
+    font-size: 15px;
+    color: rgb(141, 141, 141);
+    
+}
+.main__container input:focus{
+    outline: none;
+    border-bottom:1px solid rgb(196, 196, 196);
+}
+#submit{
+    margin-left: 170px;
+    background-color: rgb(84, 84, 249);
+    outline: none;
+    border:none;
+    width: 100px;
+    height: 35px;
+    color: rgb(242, 242, 242);
+    border-radius: 10px;
+}
+footer{
+    background-color: rgb(204, 204, 204);
+    overflow: auto;
+    height: 100%;
+    width: 100%; 
+    text-align: center;
+    font-size: 12px;
+    padding-top: 30px;
+    
+}

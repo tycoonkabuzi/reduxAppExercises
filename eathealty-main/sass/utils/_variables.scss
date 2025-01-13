@@ -1,0 +1,22 @@
+body,html{
+    box-sizing:border-box;
+    padding: 0;
+    margin: 0;
+}
+
+$primary-color:#966BF6;
+$second-color:#F6C04A;
+$third-color: #C88271;
+$border-color:#E6D8F1;
+$color-text:#A8A0BE;
+$text-bouton:#746B6B;
+$color-content:#A8A0BE;
+$color-link:white; 
+$color-element1:#F8F1FC;
+$color-element2:#FAF8FE;
+$screens:(
+    extra-small:600px,
+    small:768px,
+    medium:992px,
+    large:1200px
+);
