@@ -1,0 +1,20 @@
+.counter {
+  box-sizing: border-box;
+  color: black;
+  border: 1px solid gray;
+  width: 60%;
+  margin: auto;
+  padding: 200px;
+  text-align: center;
+  margin-top: 100px;
+}
+button {
+  margin-top: 20px;
+  padding: 10px 22px;
+  border: none;
+  background-color: rgb(72, 127, 66);
+  color: white;
+}
+button:hover {
+  background-color: rgb(54, 95, 49);
+}
