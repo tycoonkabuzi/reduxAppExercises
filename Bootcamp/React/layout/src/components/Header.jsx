@@ -1,7 +1,18 @@
 import styled from "styled-components";
 import { useLocation, Link } from "react-router-dom";
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: ${(props) =>
+    props.link === "/" || props.link === "/about" || props.link === "/contact"
+      ? `#363636`
+      : `white`};
+`;
 const Main = styled.div`
-  background-color: #cfcfcf;
+  background-color: ${(props) =>
+    props.link === "/" || props.link === "/about" || props.link === "/contact"
+      ? `#cfcfcf`
+      : `black`};
+
   margin: 0;
   padding: 20px;
   display: flex;
@@ -19,25 +30,36 @@ const Element = styled.li`
     font-weight: 700;
   }
 `;
-const Status = styled.p``;
+const Status = styled.p`
+  color: ${(props) =>
+    props.link === "/" || props.link === "/about" || props.link === "/contact"
+      ? `#363636`
+      : `white`};
+`;
 const Header = () => {
   const location = useLocation();
 
   return (
-    <Main>
+    <Main link={location.pathname}>
       {location.pathname === "/" ||
       location.pathname === "/about" ||
       location.pathname === "/contact" ? (
         <>
           <OrderedList>
             <Element>
-              <Link to="/"> Home</Link>
+              <StyledLink link={location.pathname} to="/">
+                Home
+              </StyledLink>
             </Element>
             <Element>
-              <Link to="/about"> About</Link>
+              <StyledLink link={location.pathname} to="/about">
+                About
+              </StyledLink>
             </Element>
             <Element>
-              <Link to="/contact"> Contact</Link>
+              <StyledLink link={location.pathname} to="/contact">
+                Contact
+              </StyledLink>
             </Element>
           </OrderedList>
         </>
@@ -45,16 +67,16 @@ const Header = () => {
         <>
           <OrderedList>
             <Element>
-              <Link to="/admin"> Dashboard</Link>
+              <StyledLink to="/admin"> Dashboard</StyledLink>
             </Element>
             <Element>
-              <Link to="/admin/users"> Users</Link>
+              <StyledLink to="/admin/users"> Users</StyledLink>
             </Element>
             <Element>
-              <Link to="/admin/settings"> Settings</Link>
+              <StyledLink to="/admin/settings"> Settings</StyledLink>
             </Element>
           </OrderedList>
-          <Status> Logged In as an Admin</Status>
+          <Status link={location.pathname}> Logged In as an Admin</Status>
         </>
       )}
     </Main>

@@ -8,13 +8,23 @@
   text-align: center;
   margin-top: 100px;
 }
+
 button {
   margin-top: 20px;
   padding: 10px 22px;
   border: none;
   background-color: rgb(72, 127, 66);
   color: white;
+
+  margin-left: 10px;
 }
+
 button:hover {
   background-color: rgb(54, 95, 49);
+}
+p {
+  font-size: 36px;
+}
+.counter-value {
+  color: red;
 }
