@@ -4,6 +4,7 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 import Counter from "./components/Counter";
 import Todo from "./components/todo";
+import Table from "./components/Table";
 
 function App() {
   // everything is in the store.
@@ -19,6 +20,7 @@ function App() {
       <Counter />
 
       <Todo />
+      <Table />
     </>
   );
 }
