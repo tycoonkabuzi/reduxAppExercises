@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const todoSlice = createSlice({
-  name: "todo",
+  name: "todo", // the name of the slice.
   initialState: [{ id: 1, text: "Aller au boulot" }],
   reducers: {
     addToTodo: (state, action) => {
@@ -12,7 +12,12 @@ const todoSlice = createSlice({
     },
 
     modifyTodo: (state, action) => {
-      console.log(state.find((id) => id.id == action.payload).text);
+      //console.log(state.find((id) => id.id == action.payload).text);
+      const index = state.findIndex(
+        (task) => task.id === action.payload.todoId
+      );
+      state[index].text = action.payload.newContent;
+      console.log(action.payload.newContent);
     },
   },
 });

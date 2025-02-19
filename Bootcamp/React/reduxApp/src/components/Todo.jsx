@@ -8,12 +8,34 @@ const Todo = () => {
   const dispatch = useDispatch();
   const refInput = useRef();
   const [clicked, setClicked] = useState(false);
+  const [tobeModified, setTobeModified] = useState();
 
   return (
     <div>
       <h1>Todo</h1>
-      <input ref={refInput} type="text" />
-      <button onClick={() => dispatch(addToTodo(refInput.current.value))}>
+      <input
+        ref={refInput}
+        value={tobeModified && tobeModified.newContent}
+        type="text"
+        onChange={(e) =>
+          clicked === true
+            ? setTobeModified((prev) => ({
+                ...prev,
+                newContent: e.target.value,
+              }))
+            : setTobeModified()
+        }
+      />
+      <button
+        onClick={() =>
+          clicked === false
+            ? (dispatch(addToTodo(refInput.current.value)),
+              setTobeModified((prev) => ({ ...prev, newContent: "" })))
+            : (dispatch(modifyTodo(tobeModified)),
+              setClicked(!clicked),
+              setTobeModified((prev) => ({ ...prev, newContent: "" })))
+        }
+      >
         {clicked ? "Save" : "Add"}
       </button>
       <div>
@@ -26,9 +48,13 @@ const Todo = () => {
             </button>
             <button
               onClick={() => {
-                setClicked(true);
+                setClicked(!clicked);
                 refInput.current?.focus();
-                dispatch(modifyTodo(theTodo.id));
+
+                setTobeModified({
+                  todoId: theTodo.id,
+                  newContent: theTodo.text,
+                });
               }}
             >
               {clicked ? "Cancel" : "Edit"}
