@@ -1,4 +1,6 @@
 import Project from "../models/Project.js";
+import fs from "fs";
+import path from "path";
 
 const projectController = {
   addProject: async (req, res) => {
@@ -26,8 +28,13 @@ const projectController = {
 
   deleteProject: async (req, res) => {
     try {
-      const id = req.params.id;
+      const { id, filename } = req.params;
       const projectToDelete = await Project.findByIdAndDelete(id);
+
+      const filePath = path.resolve("uploads", filename);
+      if (fs.existsSync(filePath)) {
+        fs.unlinkSync(filePath);
+      }
       res.status(204).json(projectToDelete);
     } catch (error) {
       res.status(500).json({ err: error });
